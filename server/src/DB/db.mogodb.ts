@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
-import app from "./app"
+import app from "../app";
 
 const port: number = 5000;
 const db_name: string = "chat_app";
 
-// database connection with mongoose
+
 async function databaseConnection() {
     try {
         await mongoose.connect(`mongodb://127.0.0.1:27017/${db_name}`);
@@ -17,4 +17,4 @@ async function databaseConnection() {
         console.error(error);
     }
 }
-databaseConnection();
+export default databaseConnection;
